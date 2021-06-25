@@ -12,7 +12,7 @@ import {BrowserRouter as Router, Route, Link} from 'react-router';
 import demoNames from '../data/demoNames';
 import countries from '../data/countries';
 import Settings from '../static/Settings';
-import Firebase from '../firebase';
+import firebase from '../firebase';
 import Toggle from 'react-toggle';
 
 var GamesDB;
@@ -164,8 +164,8 @@ export default class IndexPage extends React.Component {
 	
 	SetGameName(gameName){
 		///// SET DATABASE/////
-		GamesDB = Firebase.database().ref(gameName);
-		//this.PopulateTestTeams(true,12);
+		GamesDB = firebase.database().ref(gameName);
+		this.PopulateTestTeams(true,12);
 		GamesDB.set({
 				gameName:gameName,
 				players: this.state.players,
@@ -181,7 +181,7 @@ export default class IndexPage extends React.Component {
 			players : players,
 			gameName : gameName
 		});
-		GamesDB = Firebase.database().ref(gameName);
+		GamesDB = firebase.database().ref(gameName);
 	}
 	
 	PopulateTestTeams(bool, nTeams){
