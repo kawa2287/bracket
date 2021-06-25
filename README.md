@@ -7,6 +7,8 @@ Lots of things to do...
 * Hook up dash buttons instead of keyboard strokes
 * Create 'blind draw' option
 
+use Node v6.11.2
+
 to run:
 
     npm start
